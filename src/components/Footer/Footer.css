@@ -70,6 +70,12 @@
 }
 
 @media screen and (max-width: 750px) {
+  .footer__links {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .footer__nav_links {
     flex-direction: column;
   }

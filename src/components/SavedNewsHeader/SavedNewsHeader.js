@@ -6,7 +6,7 @@ function SavedNewsHeader(props) {
         {props.userName}, you have {props.counter} saved articles
       </h2>
       <h3 className="savedNews__keywords">
-        {props.keywords}
+        {"By keywords: Nature, Yellowstone, and 2 other"}
       </h3>
     </div>
   );

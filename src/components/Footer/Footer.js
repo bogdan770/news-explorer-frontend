@@ -15,7 +15,7 @@ function Footer(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Practicum by Yandex
+            Practicum
           </a>
         </nav>
         <div className="footer__social">

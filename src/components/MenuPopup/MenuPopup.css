@@ -1,11 +1,17 @@
 .popup__menu {
-  background-color: black;
+  background-color: #1a1b22;
   box-shadow: 0px 0px 25px rgb(0 0 0 / 15%);
   border-radius: 10px;
   width: 100%;
   height: fit-content;
   position: relative;
   margin: 0 calc((100% - 331px) / 2);
+}
+
+@media screen and (max-width: 375px) {
+  .popup__menu {
+    margin: 0 auto;
+  }
 }
 
 .popup__close_type_menu {

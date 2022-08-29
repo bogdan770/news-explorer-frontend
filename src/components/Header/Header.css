@@ -25,6 +25,7 @@
 }
 
 .header__logo {
+  width: 200px;
   font-family: Roboto-slab, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
