@@ -1,4 +1,4 @@
-.nothingFound {
+.nothing-found {
   background: #f5f6f7;
   display: flex;
   flex-direction: column;
@@ -8,13 +8,13 @@
   padding-bottom: 80px;
 }
 
-.nothingFound__image {
+.nothing-found__image {
   background-image: url("../../images/notfound.png");
   width: 96px;
   height: 96px;
 }
 
-.nothingFound__title {
+.nothing-found__title {
   font-family: Roboto-slab, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -24,7 +24,7 @@
   margin: 24px 0 16px;
 }
 
-.nothingFound__subtitle {
+.nothing-found__subtitle {
   font-family: Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;

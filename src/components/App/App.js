@@ -123,7 +123,7 @@ function App() {
   };
 
   return (
-    <div className="page__container">
+    <main className="page">
       <CurrentUserContext.Provider value={currentUser}>
         <Header
           onLoginClick={handleLoginClick}
@@ -186,7 +186,7 @@ function App() {
           onLogoutClick={handleLogoutClick}
         />
       </CurrentUserContext.Provider>
-    </div>
+    </main>
   );
 }
 export default App;

@@ -1,9 +1,9 @@
 function Footer(props) {
   return (
     <footer className="footer">
-      <div className="footer__copyrights">
+      <h5 className="footer__copyrights">
         © 2021 Supersite, Powered by News API
-      </div>
+      </h5>
       <div className="footer__nav">
         <nav className="footer__links">
           <a className="footer__home" href="#home" onClick={props.onHomeClick}>

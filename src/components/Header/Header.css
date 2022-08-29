@@ -18,6 +18,8 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+  align-items: baseline;
+
 }
 
 .header__container_type_black {

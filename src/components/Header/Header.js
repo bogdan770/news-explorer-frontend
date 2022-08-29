@@ -13,6 +13,7 @@ function Header(props) {
         }`}
       >
         <div className="header__logo">NewsExplorer</div>
+
         <Navigation
           onLoginClick={props.onLoginClick}
           onLogoutClick={props.onLogoutClick}
@@ -24,12 +25,15 @@ function Header(props) {
           userName={props.userName}
           homeActive={props.homeActive}
         />
+        
       </div>
+      <div className="header__line"></div>
       {props.loggedInSavedNews ? (
         <SavedNewsHeader userName={props.userName} counter={props.counter} />
       ) : (
         <Search onSearchClick={props.onSearchClick} />
       )}
+
     </header>
   );
 }
