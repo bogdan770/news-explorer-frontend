@@ -36,11 +36,11 @@ function Navigation(props) {
       >
         {props.loggedin ? props.userName : "Sign in"}
         {props.loggedin && (
-          <span
+          <i
             className={`icon ${
               props.loggedInSavedNews ? "icon_type_black" : ""
             }`}
-          ></span>
+          ></i>
         )}
       </button>
     </nav>

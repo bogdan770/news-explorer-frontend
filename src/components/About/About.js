@@ -2,7 +2,7 @@ import avatar from "../../images/ava.jpg";
 
 function About(props) {
   return (
-    <div className="about">
+    <section className="about">
       <img className="about__avatar" src={avatar} alt="avatar"></img>
       <div className="about__description">
         <h2 className="about__title">About the author</h2>
@@ -15,7 +15,7 @@ function About(props) {
           learned there, and how you can help potential customers.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

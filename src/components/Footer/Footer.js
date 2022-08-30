@@ -19,22 +19,22 @@ function Footer(props) {
           </a>
         </nav>
         <div className="footer__social">
-          <a
+          <i
             className="footer__git"
             href="https://github.com/bogdan770"
             target="_blank"
             rel="noopener noreferrer"
           >
             {""}
-          </a>
-          <a
+          </i>
+          <i
             className="footer__facebook"
             href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
             {""}
-          </a>
+          </i>
         </div>
       </div>
     </footer>

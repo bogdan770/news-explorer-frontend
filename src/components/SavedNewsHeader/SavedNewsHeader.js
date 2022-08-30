@@ -1,13 +1,13 @@
 function SavedNewsHeader(props) {
   return (
-    <div className="header__contaner_saved-news">
-      <h4 className="header__title_saved-news">Saved articles</h4>
-      <h2 className="header__details_saved-news">
+    <div className="header__section">
+      <h4 className="header__title">Saved articles</h4>
+      <h2 className="header__details">
         {props.userName}, you have {props.counter} saved articles
       </h2>
-      <h3 className="header__keywords_saved-news">
+      <h3 className="header__keywords">
         {"By keywords: "}
-        <span className="header__keywords_saved-news header__keywords_saved-news_bold">
+        <span className="header__keywords header__keywords_bold">
           Nature, Yellowstone and 2 other
         </span>
       </h3>
