@@ -2,7 +2,7 @@
   margin-right: 7%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: baseline;
   width: 33%;
 }
 
@@ -29,6 +29,7 @@
   font-size: 18px;
   line-height: 24px;
   margin: 0 0 0 5%;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 950px) {
@@ -37,7 +38,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .header__link {
     display: none;
   }
@@ -107,7 +108,7 @@
   margin-left: 45px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .header__button {
     width: 152px;
     visibility: hidden;
@@ -150,7 +151,7 @@
   color: #fff;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .header__menu {
     display: block;
   }
