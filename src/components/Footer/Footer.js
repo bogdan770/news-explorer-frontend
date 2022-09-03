@@ -1,14 +1,16 @@
+import { Link } from 'react-router-dom';
+
 function Footer(props) {
   return (
     <footer className="footer">
       <h5 className="footer__copyrights">
-        © 2021 Supersite, Powered by News API
+        © 2022 Supersite, Powered by News API
       </h5>
       <div className="footer__nav">
         <nav className="footer__links">
-          <a className="footer__home" href="#home" onClick={props.onHomeClick}>
+          <Link to="/" className="footer__home" onClick={props.onHomeClick}>
             Home
-          </a>
+          </Link>
           <a
             className="footer__practicum"
             href="https://practicum.com/"
@@ -25,7 +27,7 @@ function Footer(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {""}
+            {''}
           </i>
           <i
             className="footer__facebook"
@@ -33,7 +35,7 @@ function Footer(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {""}
+            {''}
           </i>
         </div>
       </div>
