@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build"
+    "deploy": "npm run build scp -r ./build/* bogdin666@api.koshka.students.nomoredomainssbs.ru:/home/bogdin666@/frontend" "
   },
   "eslintConfig": {
     "extends": [
