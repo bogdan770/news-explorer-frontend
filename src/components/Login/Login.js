@@ -13,39 +13,37 @@ function Login(props) {
   }
 
   return (
-    <div>
-      <PopupWithForm
-        header="Sign in"
-        name="login"
-        buttonTitle="Sign in"
-        isOpen={props.isOpen}
-        onClose={props.onClose}
-        onSubmit={handleSubmit}
-        footer="Sign up"
-        onOverlayClick={props.onOverlayClick}
-        onModalClick={props.onModalClick}
-        onRegisterClick={props.onRegisterClick}
-        isValid={isValid}
-      >
-        <FormField
-          label="Email"
-          name="email"
-          placeholder="Enter email"
-          value={values.email || ''}
-          onChange={(e) => handleChange(e)}
-          error={errors.email}
-        ></FormField>
-        <FormField
-          label="Password"
-          name="password"
-          placeholder="Enter password"
-          value={values.password || ''}
-          onChange={(e) => handleChange(e)}
-          minLength="3"
-          error={errors.password}
-        ></FormField>
-      </PopupWithForm>
-    </div>
+    <PopupWithForm
+      header="Sign in"
+      name="login"
+      buttonTitle="Sign in"
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      onSubmit={handleSubmit}
+      footer="Sign up"
+      onOverlayClick={props.onOverlayClick}
+      onModalClick={props.onModalClick}
+      onRegisterClick={props.onRegisterClick}
+      isValid={isValid}
+    >
+      <FormField
+        label="Email"
+        name="email"
+        placeholder="Enter email"
+        value={values.email || ''}
+        onChange={(e) => handleChange(e)}
+        error={errors.email}
+      ></FormField>
+      <FormField
+        label="Password"
+        name="password"
+        placeholder="Enter password"
+        value={values.password || ''}
+        onChange={(e) => handleChange(e)}
+        minLength="3"
+        error={errors.password}
+      ></FormField>
+    </PopupWithForm>
   );
 }
 

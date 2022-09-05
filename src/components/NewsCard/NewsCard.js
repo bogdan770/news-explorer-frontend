@@ -48,7 +48,7 @@ function Card(props) {
       {loggedin && loggedInSavedNews ? (
         <span className="card__note">Remove from saved</span>
       ) : loggedin ? (
-        ''
+        ' '
       ) : (
         <span className="card__note">Sign in to save articles</span>
       )}
@@ -60,7 +60,7 @@ function Card(props) {
       {loggedInSavedNews ? (
         <span className="card__image_title">{props.card.keyword}</span>
       ) : (
-        ''
+        ' '
       )}
 
       {loggedInSavedNews ? (

@@ -28,9 +28,7 @@ function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [preloadOpen, setPreloadOpen] = useState(false);
   const [nothingFoundOpen, setNothingFoundOpen] = useState(false);
-  const [cards, setCards] = useState(
-    JSON.parse(localStorage.getItem('cards') || '[]')
-  );
+  const [cards, setCards] = useState([]);
   const [messege, setMessege] = useState(false);
   const [homeActive, setHomeActive] = useState(true);
   const [keyWord, setKeyWord] = useState('');
@@ -89,18 +87,7 @@ function App() {
         setIsInfoTooltipPopupOpen(true);
       });
   }
-  function deleteArticle(card) {
-    MainApi.deleteArticle(card._id, token)
-      .then(() => {
-        setSavedNews((state) => state.filter((c) => c._id !== card._id));
-        setCards((state) =>
-          state.map((c) =>
-            c.title === card.title ? { ...c, saved: 'false' } : c
-          )
-        );
-      })
-      .catch((err) => console.log(err));
-  }
+
   function handleSaveCardClick(card) {
     if (loggedIn) {
       if (card.owner === currentUser._id || card.saved === 'true') {
@@ -113,7 +100,7 @@ function App() {
       } else {
         MainApi.addArticle(token, card, keyWord)
           .then((newCard) => {
-            setSavedNews([...savedNews, newCard.data]);
+            setSavedNews([...savedNews, newCard]);
             setCards((state) =>
               state.map((c) =>
                 c.title === card.title ? { ...c, saved: 'true' } : c
@@ -125,6 +112,18 @@ function App() {
     } else {
       setIsLoginPopupOpen(true);
     }
+  }
+  function deleteArticle(card) {
+    MainApi.deleteArticle(card._id, token)
+      .then(() => {
+        setSavedNews((state) => state.filter((c) => c._id !== card._id));
+        setCards((state) =>
+          state.map((c) =>
+            c.title === card.title ? { ...c, saved: 'false' } : c
+          )
+        );
+      })
+      .catch((err) => console.log(err));
   }
 
   function handleSubmitLogin({ values, resetForm }) {
@@ -210,10 +209,11 @@ function App() {
     e.stopPropagation();
   };
   return (
-    <div className="page__container">
+    <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route
+            exact
             path="/"
             element={
               <>
@@ -240,32 +240,30 @@ function App() {
             }
           />
           <Route
+            exact
             path="saved-news"
             element={
-              <>
-                <ProtectedRoute loggedInSavedNews={loggedInSavedNews}>
-                  <SavedNewsHeader
-                    onLoginClick={handleLoginClick}
-                    onLogoutClick={handleLogoutClick}
-                    onHomeClick={handleHomeClick}
-                    onSavedArticlesClick={handleSavedArticlesClick}
-                    onMenuClick={handleMenuClick}
-                    homeActive={homeActive}
-                    loggedin={loggedIn}
-                    loggedInSavedNews={loggedInSavedNews}
-                    savedNews={savedNews}
-                  />
-                  <SavedNews
-                    onSaveCardClick={handleSaveCardClick}
-                    loggedin={loggedIn}
-                    loggedInSavedNews={loggedInSavedNews}
-                    savedNews={savedNews}
-                  />
-                </ProtectedRoute>
-              </>
+              <ProtectedRoute loggedInSavedNews={loggedInSavedNews}>
+                <SavedNewsHeader
+                  onLoginClick={handleLoginClick}
+                  onLogoutClick={handleLogoutClick}
+                  onHomeClick={handleHomeClick}
+                  onSavedArticlesClick={handleSavedArticlesClick}
+                  onMenuClick={handleMenuClick}
+                  homeActive={homeActive}
+                  loggedin={loggedIn}
+                  loggedInSavedNews={loggedInSavedNews}
+                  savedNews={savedNews}
+                />
+                <SavedNews
+                  onSaveCardClick={handleSaveCardClick}
+                  loggedin={loggedIn}
+                  loggedInSavedNews={loggedInSavedNews}
+                  savedNews={savedNews}
+                />
+              </ProtectedRoute>
             }
           />
-          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
 
         <Footer
